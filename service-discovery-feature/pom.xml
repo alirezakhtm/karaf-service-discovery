@@ -9,20 +9,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>karaf-service-discovery</artifactId>
+        <groupId>com.khtm.osgi</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.khtm.osgi</groupId>
-    <artifactId>karaf-service-discovery</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <name>KARAF :: SERVICE :: DISCOVERY :: FEATURE</name>
 
-    <name>KARAF :: SERVICE :: DISCOVERY :: ROOT</name>
-
-    <modules>
-        <module>service-discovery-feature</module>
-        <module>service-discovery</module>
-    </modules>
-
+    <artifactId>service-discovery-feature</artifactId>
     <developers>
         <developer>
             <id>1</id>
@@ -35,4 +31,6 @@
             <timezone>Tehran, Iran</timezone>
         </developer>
     </developers>
+
+
 </project>
