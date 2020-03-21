@@ -15,8 +15,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <name>KARAF :: SERVICE :: DISCOVERY</name>
+    <artifactId>service-discovery-api</artifactId>
+    <name>KARAF :: SERVICE :: DISCOVERY :: API</name>
+    <packaging>bundle</packaging>
     <build>
         <plugins>
             <plugin>
@@ -27,9 +28,23 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${version.apache.felix}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            com.khtm.osgi.discovery.eureka.api;
+                            com.khtm.osgi.discovery.eureka.model
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-    <artifactId>service-discovery</artifactId>
+
 
     <developers>
         <developer>
@@ -68,6 +83,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-
 </project>

@@ -20,8 +20,14 @@
 
     <modules>
         <module>service-discovery-feature</module>
-        <module>service-discovery</module>
+        <module>service-discovery-api</module>
+        <module>service-discovery-provider</module>
     </modules>
+
+    <properties>
+        <version.apache.felix>4.2.1</version.apache.felix>
+        <version.codehaus.mojo>3.1.0</version.codehaus.mojo>
+    </properties>
 
     <developers>
         <developer>

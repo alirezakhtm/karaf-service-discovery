@@ -12,7 +12,7 @@ import com.khtm.osgi.discovery.eureka.api.EurekaApi;
 import com.khtm.osgi.discovery.eureka.model.Application;
 import com.khtm.osgi.discovery.eureka.model.Instance;
 import com.khtm.osgi.discovery.eureka.model.Root;
-import lombok.Data;
+import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
@@ -276,7 +276,7 @@ public class EurekaService implements EurekaApi {
                 request = new HttpDelete(strRequest);
                 break;
         }
-        request.addHeader("User-Agent", USER_AGENT);
+        request.addHeader("User-Agent", HttpHeaders.USER_AGENT);
         // receive http response
         assert client != null;
         HttpResponse response = client.execute(request);
@@ -333,8 +333,15 @@ public class EurekaService implements EurekaApi {
 
     }
 
-    @Data
     private class Status {
         private String status;
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
     }
 }
