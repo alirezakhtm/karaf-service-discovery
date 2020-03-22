@@ -12,6 +12,19 @@
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0
           http://karaf.apache.org/xmlns/features/v1.3.0">
 
+    <feature name="karaf-service-discovery-eureka" version="${project.version}">
+        <config name="eureka.config">
+            eureka.server.url=http://localhost
+            eureka.server.port=8761
+            application.name=eureka-client
+            application.ip=127.0.0.1
+            application.port=8080
+            application.healthcheckurl=/actuator/health
+            application.statuspageurl=/actuator/status
+            application.homepageurl=/actuator/info
+        </config>
+    </feature>
+
     <feature name="karaf-service-discovery-eureka-init" version="${project.version}">
         <feature>aries-blueprint</feature>
         <bundle>wrap:mvn:com.google.code.gson/gson/2.8.5</bundle>
@@ -27,6 +40,12 @@
     <feature name="karaf-service-discovery-eureka-provider" version="${project.version}">
         <feature>karaf-service-discovery-eureka-api</feature>
         <bundle>mvn:com.khtm.osgi/service-discovery-provider/${project.version}</bundle>
+    </feature>
+
+    <feature name="karaf-service-discovery-eureka-client" version="${project.version}">
+        <feature>karaf-service-discovery-eureka</feature>
+        <feature>karaf-service-discovery-eureka-provider</feature>
+        <bundle>mvn:com.khtm.osgi/service-discovery-client/${project.version}</bundle>
     </feature>
 
 </features>

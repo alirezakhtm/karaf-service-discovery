@@ -38,9 +38,9 @@ import static org.apache.http.HttpHeaders.USER_AGENT;
  * */
 public class EurekaService implements EurekaApi {
 
-    private final String eurekaUrl;
-    private final int eurekaPortNum;
-    private final String ipv4;
+    private String eurekaUrl;
+    private int eurekaPortNum;
+    private String ipv4;
 
     public String instanceId;            // static
     public String applicationName;       // static
@@ -59,7 +59,7 @@ public class EurekaService implements EurekaApi {
      * @param eurekaUrl like http://10.12.47.125
      * @param eurekaPortNum like 8761
      * */
-    public EurekaService(String eurekaUrl, int eurekaPortNum, String ipv4) {
+    public void init(String eurekaUrl, int eurekaPortNum, String ipv4) {
         this.eurekaPortNum = eurekaPortNum;
         this.eurekaUrl = eurekaUrl;
         this.ipv4 = ipv4;

@@ -22,6 +22,7 @@
         <module>service-discovery-feature</module>
         <module>service-discovery-api</module>
         <module>service-discovery-provider</module>
+        <module>service-discovery-client</module>
     </modules>
 
     <properties>

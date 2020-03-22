@@ -22,6 +22,8 @@ public interface EurekaApi {
     static String STATUS_UP = "UP";
     static String STATUS_DOWN = "DOWN";
 
+    void init(String eurekaUrl, int eurekaPortNum, String ipv4);
+
     HttpResponse registerServiceInEurekaService(
             String applicationName,
             int portNumber,
